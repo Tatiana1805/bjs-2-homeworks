@@ -2,25 +2,36 @@
 
 function solveEquation(a, b, c) {
 	let arr = [];
-	let d = b ** -4 * a * c;
-	console.log(d)
-	if (d < 0) {
-		arr['dscrt'] = d;
-	} else if (d === 0) {
-		arr = -b / (2 * a);
+	let dscrt = Math.pow(b, 2) -4 * a * c;
+	// console.log(dscrt)
+	if (dscrt < 0) {
+		console.log(arr);
+	} else if (dscrt === 0) {
+		arr = [-b / (2 * a)];
+		console.log(arr)
 	} else {
-		arr.push = (-b + Math.sqrt(d)) / (2 * a);
-		arr.push = (-b - Math.sqrt(d)) / (2 * a);
+		x1 = [(-b + Math.sqrt(dscrt)) / (2 * a)];
+		x2 = [(-b - Math.sqrt(dscrt)) / (2 * a)];
+		console.log(x1, x2);
 	}
 	return arr;
 }
-console.log(solveEquation(5, 2, 3))
+solveEquation(1, 12, 3)
+
 
 function calculateTotalMortgage(percent, contribution, amount, countMonths) {
-	percent = ((1 + 100 / 100)(1 / 12) - 1) * 100;
-	let S = amount - contribution;
-	let pay = S * (percent + (percent / (((1 + percent) ** countMonths) - 1)))
-	let totalAmound = pay * countMonths;
-	console.log(totalAmound.toFixed(2));
+	if (calculateTotalMortgage === String) {
+		false
+	} else {
+	let	percentMonth = percent / 100 / 12;
+	let sum = amount - contribution;
+	let payMonth = sum * (percentMonth + (percentMonth / (((1 + percentMonth)**countMonths) - 1)));
+	amount = payMonth * countMonths;
+	}
+	console.log(Number(amount.toFixed(2)));
 }
-console.log(calculateTotalMortgage(10, 0, 50000, 12));
+calculateTotalMortgage(10, 1000, 50000, 12)
+
+
+
+function get(allMessa)
