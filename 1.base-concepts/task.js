@@ -1,22 +1,24 @@
 "use strict"
 
-function solveEquation(a, b, c) {
+function solveEquation(a, b, c, x1, x2) {
 	let arr = [];
 	let dscrt = Math.pow(b, 2) -4 * a * c;
-	// console.log(dscrt)
+	// console.log(dscrt);
 	if (dscrt < 0) {
-		console.log(arr);
+		return arr;
 	} else if (dscrt === 0) {
 		arr = [-b / (2 * a)];
-		console.log(arr)
+		return arr;
 	} else {
-		x1 = [(-b + Math.sqrt(dscrt)) / (2 * a)];
-		x2 = [(-b - Math.sqrt(dscrt)) / (2 * a)];
-		console.log(x1, x2);
+		x1 = (-b + Math.sqrt(dscrt)) / (2 * a);
+		x2 = (-b - Math.sqrt(dscrt)) / (2 * a);
+		arr.push(x1, x2);
 	}
-	return arr;
+	 return arr;
 }
-solveEquation(1, 12, 3)
+solveEquation(5, 12, 3);
+
+  
 
 
 function calculateTotalMortgage(percent, contribution, amount, countMonths) {
@@ -28,10 +30,8 @@ function calculateTotalMortgage(percent, contribution, amount, countMonths) {
 	let payMonth = sum * (percentMonth + (percentMonth / (((1 + percentMonth)**countMonths) - 1)));
 	amount = payMonth * countMonths;
 	}
-	console.log(Number(amount.toFixed(2)));
+	return Number(amount.toFixed(2));
 }
 calculateTotalMortgage(10, 1000, 50000, 12)
 
 
-
-function get(allMessa)
