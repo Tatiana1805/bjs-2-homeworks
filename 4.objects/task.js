@@ -5,29 +5,23 @@ function Student(name, gender, age) {
   this.marks = [];
 }
 
-let student1 = new Student();
-let Student2 = new Student();
-
 Student.prototype.setSubject = function (subjectName) {
   this.subject = subjectName;
 }
 
 Student.prototype.addMarks = function (...marks) {
-  if(this.marks === undefined){
-    this.marks = [marks];
-  } else {
-    //Object.keys(marks).forEach((key) => console.log(key, marks[key]))
-   return this.marks.push(...marks);  
-
-  }
-  }
+  if(this.marks !== undefined && marks.length !== 0){
+    this.marks.push(...marks)
+   }
+}
 
 
 Student.prototype.getAverage = function () {
-  if(this.marks === undefined){
+  if(this.marks === undefined || this.marks.length === 0){
     return 0;
   } else {
-    this.marks.reduce((acc, m) => acc + m, 0) / this.marks.length;
+    const mark = this.marks.reduce((acc, m) => acc + m, 0) / this.marks.length;
+    return mark;
 }
 }
 
